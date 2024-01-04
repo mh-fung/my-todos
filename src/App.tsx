@@ -11,7 +11,12 @@ function App() {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    setToDoList([...toDoList, { task: inputTerm, isCompleted: false }]);
+    if (inputTerm == "") {
+      alert("Please enter a todo");
+    } else {
+      setToDoList([...toDoList, { task: inputTerm, isCompleted: false }]);
+      setInputTerm("");
+    }
   };
   const handlInput = (event: FormEvent<HTMLInputElement>) => {
     setInputTerm(event.currentTarget.value);
@@ -41,6 +46,7 @@ function App() {
   return (
     <div className="app">
       <Nav
+        inputTerm={inputTerm}
         handleSubmit={handleSubmit}
         handleInput={handlInput}
         handleReset={handleReset}

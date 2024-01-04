@@ -2,17 +2,27 @@ import { FormEvent, FormEventHandler } from "react";
 import InputBox from "../../InputBox/InputBox";
 
 type NavProps = {
+  inputTerm: string;
   handleSubmit: (event: FormEvent) => void;
   handleInput: (event: FormEvent<HTMLInputElement>) => void;
   handleReset: FormEventHandler<HTMLButtonElement>;
 };
 
-const Nav = ({ handleSubmit, handleInput, handleReset }: NavProps) => {
+const Nav = ({
+  inputTerm,
+  handleSubmit,
+  handleInput,
+  handleReset,
+}: NavProps) => {
   return (
     <div>
       <header>My Todos</header>
       <button onClick={handleReset}>Reset</button>
-      <InputBox handleSubmit={handleSubmit} handleInput={handleInput} />
+      <InputBox
+        inputTerm={inputTerm}
+        handleSubmit={handleSubmit}
+        handleInput={handleInput}
+      />
     </div>
   );
 };
