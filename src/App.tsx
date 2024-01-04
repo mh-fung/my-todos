@@ -2,6 +2,7 @@ import { FormEvent, useState } from "react";
 import Nav from "./components/containters/Nav/Nav";
 import Content from "./components/containters/Content/Content";
 import ToDoItem from "./types/types";
+import "./App.scss";
 
 function App() {
   const [inputTerm, setInputTerm] = useState<string>("");
@@ -26,14 +27,25 @@ function App() {
     setToDoList(updatedToDoList);
   };
 
+  const handleClick = (event: FormEvent<HTMLButtonElement>) => {
+    const updatedToDoList = toDoList.filter((item) => {
+      return item.task !== event.currentTarget.value;
+    });
+    setToDoList(updatedToDoList);
+  };
+
   return (
     <div className="app">
       <header>My Todos</header>
       <Nav handleSubmit={handleSubmit} handleInput={handlInput} />
       {toDoList.length == 0 ? (
-        <p>Nothing to see here yet... Add a task in the filed above!</p>
+        <p>Nothing to see here yet... Add a task in the field above!☝️</p>
       ) : (
-        <Content toDoListArray={toDoList} handleChecked={handleChecked} />
+        <Content
+          toDoListArray={toDoList}
+          handleChecked={handleChecked}
+          handleClick={handleClick}
+        />
       )}
     </div>
   );
