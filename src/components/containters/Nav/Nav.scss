@@ -1,0 +1,20 @@
+@use "../../../assets/variables" as *;
+
+.navigation {
+  padding: 20px 10px 0px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &__header {
+    font-size: 25px;
+    font-weight: 700;
+    padding-left: 5px;
+  }
+  &__button {
+    margin-left: 38vw;
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 5px;
+  }
+}

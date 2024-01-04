@@ -20,7 +20,11 @@ const Task = ({ toDoItem, handleChecked, handleClick }: TaskProps) => {
       >
         {toDoItem.task}
       </label>
-      <button value={toDoItem.task} onClick={handleClick}>
+      <button
+        className="toDoItem__button"
+        value={toDoItem.task}
+        onClick={handleClick}
+      >
         🗑️
       </button>
     </div>

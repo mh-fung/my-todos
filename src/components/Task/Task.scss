@@ -3,15 +3,21 @@
 .toDoItem {
   padding: 10px;
   border: 1px solid black;
-  margin: 10px 0px;
+  margin: 10px 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-radius: 5px;
   .task {
     padding: 10px;
 
     &--complete {
       text-decoration: line-through;
     }
+  }
+
+  &__button {
+    background-color: white;
+    border: 0px;
   }
 }

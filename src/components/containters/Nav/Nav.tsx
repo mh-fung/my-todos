@@ -1,3 +1,4 @@
+import "./Nav.scss";
 import { FormEvent, FormEventHandler } from "react";
 import InputBox from "../../InputBox/InputBox";
 
@@ -15,9 +16,11 @@ const Nav = ({
   handleReset,
 }: NavProps) => {
   return (
-    <div>
-      <header>My Todos</header>
-      <button onClick={handleReset}>Reset</button>
+    <div className="navigation">
+      <header className="navigation__header">My Todos</header>
+      <button className="navigation__button" onClick={handleReset}>
+        Reset
+      </button>
       <InputBox
         inputTerm={inputTerm}
         handleSubmit={handleSubmit}

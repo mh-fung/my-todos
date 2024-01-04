@@ -52,7 +52,9 @@ function App() {
         handleReset={handleReset}
       />
       {toDoList.length == 0 ? (
-        <p>Nothing to see here yet... Add a task in the field above!☝️</p>
+        <p className="initialMessage">
+          Nothing to see here yet... Add a task in the field above!☝️
+        </p>
       ) : (
         <Content
           toDoListArray={toDoList}

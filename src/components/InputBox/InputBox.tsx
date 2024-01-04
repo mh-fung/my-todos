@@ -1,3 +1,4 @@
+import "./InputBox.scss";
 import { FormEventHandler } from "react";
 
 type InputBoxProps = {
@@ -8,14 +9,17 @@ type InputBoxProps = {
 
 const InputBox = ({ inputTerm, handleSubmit, handleInput }: InputBoxProps) => {
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="inputForm" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Add your task here..."
         value={inputTerm}
         onInput={handleInput}
+        className="inputForm__input"
       />
-      <button type="submit">+</button>
+      <button className="inputForm__button" type="submit">
+        +
+      </button>
     </form>
   );
 };
