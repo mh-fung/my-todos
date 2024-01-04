@@ -1,8 +1,9 @@
-import ToDoList1 from "../TodoList/TodoList";
+import ToDoItem from "../../../types/types";
+import ToDoList from "../TodoList/TodoList";
 type ContentProps = {
-  toDoListArray: string[];
+  toDoListArray: ToDoItem[];
 };
 const Content = ({ toDoListArray }: ContentProps) => {
-  return <ToDoList1 toDoList={toDoListArray} />;
+  return <ToDoList toDoList={toDoListArray} />;
 };
 export default Content;

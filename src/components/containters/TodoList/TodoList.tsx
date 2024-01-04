@@ -1,13 +1,15 @@
-import ToDoItem from "../../TodoItem/TodoItem";
-type toDoListProps = {
-  toDoList: string[];
+import ToDoItem from "../../../types/types";
+import Task from "../../Task/Task";
+
+type ToDoListProps = {
+  toDoList: ToDoItem[];
 };
 
-const ToDoList1 = ({ toDoList }: toDoListProps) => {
+const ToDoList = ({ toDoList }: ToDoListProps) => {
   const displayedToDoList = toDoList.map((item, index) => {
-    return <ToDoItem key={"item" + index} toDoItem={item} />;
+    return <Task key={"item" + index} toDoItem={item} />;
   });
   return <div className="toDoList">{displayedToDoList}</div>;
 };
 
-export default ToDoList1;
+export default ToDoList;
