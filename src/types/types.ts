@@ -1,6 +1,6 @@
 type ToDoItem = {
   task: string;
-  iscompleted: boolean;
+  isCompleted: boolean;
 };
 
 export default ToDoItem;
