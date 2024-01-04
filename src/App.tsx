@@ -34,10 +34,17 @@ function App() {
     setToDoList(updatedToDoList);
   };
 
+  const handleReset = () => {
+    setToDoList([]);
+  };
+
   return (
     <div className="app">
-      <header>My Todos</header>
-      <Nav handleSubmit={handleSubmit} handleInput={handlInput} />
+      <Nav
+        handleSubmit={handleSubmit}
+        handleInput={handlInput}
+        handleReset={handleReset}
+      />
       {toDoList.length == 0 ? (
         <p>Nothing to see here yet... Add a task in the field above!☝️</p>
       ) : (
